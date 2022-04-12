@@ -23,7 +23,7 @@ const Simple = ({
   title,
   type
 }: Props): JSX.Element => {
-  const Id = id || `button-${Math.random()}`
+  const Id = id || `button-${id || name}`
   const Type = type || 'button'
   const isColor = color ? `is-${color}` : 'is-primary'
   const isLoading = loading && 'is-loading'
@@ -32,6 +32,7 @@ const Simple = ({
   return (
     <button
       id={Id}
+      arial-label={ariaLabel || name}
       datatest-id={id || Id}
       accessKey={accessKey}
       onClick={action}
