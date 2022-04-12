@@ -30,7 +30,8 @@
     "prettier",
     "@typescript-eslint",
     "prettier",
-    "sonarjs"
+    "sonarjs",
+    "cypress"
   ],
   "rules": {
     "no-use-before-define": "error",
