@@ -17,15 +17,14 @@
     "incremental": true,
     "rootDir": ".",
     "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+    }
   },
   "include": [
     "next-env.d.ts",
     "graphql.d.ts",
-    "./graphql/**/*.(ts|graphql)$",
-    "./lib/**/*.(ts|graphqls)$",
-    "./pages/**/*.(ts|tsx)$",
-    "./mocks/**/*.(ts|json)$",
-    "./pages/**/*.(ts|tsx)$",
+    "./**/*.(ts|graphql)$"
   ],
   "exclude": [
     "node_modules",

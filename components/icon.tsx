@@ -15,7 +15,7 @@ export type Icon = {
 
 const Icon = ({ className, icon, key }: Icon): JSX.Element => (
   <i
-    className={`${key || 'fas'} fa-${icon || 'question'} ${className || ''}`}
+    className={`${key || 'fa-solid'} fa-${icon || 'question'} ${className || ''}`}
   />
 )
 

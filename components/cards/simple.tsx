@@ -4,16 +4,17 @@
  * @return {JSX.Element} Wrapper Component.
  */
 
-const Simple = (): JSX.Element => (
+import { ReactNode } from 'react';
+
+type Card = {
+  title: string;
+  subtitle: string;
+  children?: ReactNode;
+  date: string;
+}
+
+const Simple = ({title, subtitle, children, date}: Card): JSX.Element => (
   <div className="card">
-    <div className="card-image">
-      <figure className="image is-4by3">
-        <img
-          src="https://bulma.io/images/placeholders/1280x960.png"
-          alt="Placeholder image"
-        />
-      </figure>
-    </div>
     <div className="card-content">
       <div className="media">
         <div className="media-left">
@@ -25,17 +26,15 @@ const Simple = (): JSX.Element => (
           </figure>
         </div>
         <div className="media-content">
-          <p className="title is-4">John Smith</p>
-          <p className="subtitle is-6">@johnsmith</p>
+          <p className="title is-4">{title}</p>
+          <p className="subtitle is-6">{subtitle}</p>
         </div>
       </div>
 
       <div className="content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-        iaculis mauris. <a>@bulmaio</a>.<a href="#">#css</a>{' '}
-        <a href="#">#responsive</a>
+        {children}
         <br />
-        <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+        <time dateTime={date}>{date}</time>
       </div>
     </div>
   </div>

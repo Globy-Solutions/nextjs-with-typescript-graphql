@@ -5,24 +5,22 @@
  */
 
 import { useEffect, useState } from 'react'
-import Header from '../header'
 import Footer from '../footer'
-import { Loaders } from '../'
+import { CartShop, Loaders } from '../'
 import type { LayoutProps } from '.'
 
-const Default = ({ children, loading }: LayoutProps): JSX.Element => {
+const Shop = ({ loading }: LayoutProps): JSX.Element => {
   const [isMounted, setIsMounted] = useState<boolean>(false)
   useEffect(() => {
-    setIsMounted(true)
+    setTimeout(() => setIsMounted(true), 2000)
   }, [])
   return !loading && !isMounted ? (
     <Loaders.Default />
   ) : (
     <div className="container is-fluid">
-      <Header />
-      {children}
+      <CartShop loading={!isMounted} />
       <Footer />
     </div>
   )
 }
-export default Default
+export default Shop

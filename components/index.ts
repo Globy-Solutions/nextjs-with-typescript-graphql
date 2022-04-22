@@ -1,5 +1,6 @@
-import Layout from './layouts/default'
+import * as Layouts from './layouts'
 import * as Buttons from './buttons'
 import * as Cards from './cards'
 import * as Loaders from './loaders'
-export { Layout, Buttons, Cards, Loaders }
+import CartShop from './cart_shop'
+export { Layouts, Buttons, Cards, CartShop, Loaders }

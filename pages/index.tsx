@@ -1,8 +1,8 @@
-import { Layout } from 'components/'
+import { Layouts } from '@/components/'
 
 const Index = ({ loading }: { loading: boolean }) => {
   return (
-    <Layout loading={loading} children={''} />
+    <Layouts.Default loading={loading} children={''} />
   )
 }
 

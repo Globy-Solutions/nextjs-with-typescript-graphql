@@ -10,7 +10,7 @@ const config = {
   compress: true,
   compiler: {
     // ssr and displayName are configured by default
-    styledComponents: true,
+    // styledComponents: true,
   },
   eslint: {
     dirs: ['pages', 'component', 'utils'],

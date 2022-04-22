@@ -4,7 +4,7 @@ import type { AppProps, NextWebVitalsMetric } from 'next/app'
 import Head from 'next/head'
 
 import { ApolloProvider } from '@apollo/client'
-import { useApollo } from '../lib/apollo'
+import { useApollo } from '@/lib/apollo'
 
 import 'styles/main.sass'
 
@@ -48,14 +48,6 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        />
-        {/* <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
-        /> */}
         <meta name="description" content="Facundo Cachan" />
         <link rel="icon" href="/img/icons/logo.svg" />
         <meta name="application-name" content="Facundo Cachan - PWA App" />

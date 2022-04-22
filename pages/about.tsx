@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import type { ReactElement } from 'react'
-import { Layout, Buttons } from 'components/'
+import { Layouts, Buttons } from '@/components/'
 
 export default function About({ loading }: { loading: boolean }) {
   return (
-    <Layout loading={Boolean(loading)}>
+    <Layouts.Default loading={Boolean(loading)}>
       Welcome to the about page. Go to the{' '}
       <Link href="/">
         <a>Home</a>
@@ -17,10 +17,10 @@ export default function About({ loading }: { loading: boolean }) {
         startIcon={{ icon: 'heart' }}
         endIcon={{ icon: 'home' }}
       />
-    </Layout>
+    </Layouts.Default>
   )
 }
 
 About.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>
+  return <Layouts.Default>{page}</Layouts.Default>
 }

@@ -43,15 +43,21 @@ export default class MyDocument extends Document {
     return (
       <Html lang="es" className="dark">
         <Head>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
           />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
           />
         </Head>
         <body>
