@@ -1,4 +1,4 @@
-export type User = {
+type User = {
     id: string;
     name: string;
     lastName: string;
@@ -8,3 +8,4 @@ export type User = {
     createdAt: string;
     updatedAt: string;
 }
+export default User

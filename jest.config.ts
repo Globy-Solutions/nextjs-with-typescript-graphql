@@ -6,26 +6,21 @@ const createJestConfig = nextJest({
   // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
   dir: './',
 })
-
-// Add any custom config to be passed to Jest
 const customJestConfig: Config.InitialOptions = {
   verbose: true,
-  rootDir: './',
+  rootDir: './src',
   roots: ['<rootDir>'],
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  setupFilesAfterEnv: ['../jest.setup.js'],
   moduleNameMapper: {
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
-    '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__mocks__/fileMock.js',
-    '^@/(.*)$': '<rootDir>/$1',
-    '^components/(.*)$': '<rootDir>/components/$1',
-    '^pages/(.*)$': '<rootDir>/pages/$1',
-    '^mocks/(.*)$': '<rootDir>/mocks/$1',
+    '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/__tests__/fileMock.js',
+    // '^@/(.*)$': '<rootDir>/$1',
   },
   testEnvironment: 'jest-environment-jsdom',
-  testMatch: ['**/__tests__/**/*.ts?'],
+  testMatch: ['<rootDir>/__tests__/**'],
   testPathIgnorePatterns: ['/node_modules/', '/cypress/'],
   moduleFileExtensions: [...defaults.moduleFileExtensions, 'ts', 'tsx'],
-  transformIgnorePatterns: ['<rootDir>/[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
+  transformIgnorePatterns: ['./[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
   transform: {
     '^.+\\.(ts|tsx)$': '@swc/jest',
     '\\.graphql$': [

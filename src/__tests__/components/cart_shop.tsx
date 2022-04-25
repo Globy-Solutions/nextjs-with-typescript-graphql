@@ -1,5 +1,4 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-
 import { CartShop } from '@/components/';
 
 beforeEach(() => render(<CartShop />))

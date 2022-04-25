@@ -3,6 +3,10 @@
     "target": "es5",
     "types": ["node", "jest", "@testing-library/jest-dom"],
     "lib": ["dom", "dom.iterable", "esnext"],
+    "typeRoots": [
+      "node_modules/@types",
+      "cypress", "@testing-library/cypress"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -16,7 +20,7 @@
     "jsx": "preserve",
     "incremental": true,
     "rootDir": ".",
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
       "@/*": ["./*"],
     }
@@ -28,7 +32,8 @@
   ],
   "exclude": [
     "node_modules",
-    "__tests__/**/*",
+    "cypress",
+    "src/__tests__/**/***/*",
     "./__generated__",
     "./lib/resolvers.ts",
     "./lib/**/*.graphqls"

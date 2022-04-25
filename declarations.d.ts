@@ -1,8 +1,9 @@
-declare module "@/*"
-declare module "@/adapters/"
-declare module "@/components/"
-declare module "@/pages/*"
-declare module "@/mocks/*"
-declare module "@/models/*"
-declare module "@/lib/*"
-declare module "@/interceptors/*"
+declare module '@/adapters/'
+declare module '@/components/'
+declare module '@/pages/*'
+declare module '@/mocks/*'
+declare module '@/models'
+declare module '@/lib/*'
+declare module '@/states/*'
+declare module '@/services/*'
+declare module '@/interceptors'

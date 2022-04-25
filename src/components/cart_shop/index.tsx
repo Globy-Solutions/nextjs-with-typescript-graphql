@@ -4,17 +4,22 @@
  */
 
 import { useEffect, useState } from 'react'
-import { Loaders, Buttons } from '../'
+import { useDispatch, useSelector } from 'react-redux'
+
+import Product from '@/models'
+import { Buttons } from '@/components/'
+import { AppStore } from '@/states/redux/store'
 
 const CartShop = (): JSX.Element => {
   const [isMounted, setIsMounted] = useState<boolean>(false)
   const [showCart, setShowCart] = useState<boolean>(false)
+  const cartState = useSelector((store: AppStore) => store.cartShop)
 
   useEffect(() => {
     setIsMounted(true)
   }, [])
 
-  const showList = () => setShowCart(!showCart)
+  const showList = () => setShowCart(!showCart);
 
   return (
     <span data-testid="cart_shop">
@@ -32,7 +37,16 @@ const CartShop = (): JSX.Element => {
             <button className="delete" aria-label="close" onClick={showList} />
           </header>
           <section className="modal-card-body">
-            Content
+            {
+              showCart && cartState.map(({ id, title, price }: Product) => (
+                <p>
+                  <Buttons.Simple
+                    id={id}
+                    endIcon={{ icon: 'cart-minus' }}
+                  /> {title} {price}
+                </p>
+              ))
+            }
           </section>
           <footer className="modal-card-foot">
             <button className="button is-success">Save changes</button>

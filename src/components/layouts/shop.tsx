@@ -9,7 +9,7 @@ import Footer from '../footer'
 import { CartShop, Loaders } from '../'
 import type { LayoutProps } from '.'
 
-const Shop = ({ loading }: LayoutProps): JSX.Element => {
+const Shop = ({ children, loading }: LayoutProps): JSX.Element => {
   const [isMounted, setIsMounted] = useState<boolean>(false)
   useEffect(() => {
     setTimeout(() => setIsMounted(true), 2000)
@@ -18,7 +18,8 @@ const Shop = ({ loading }: LayoutProps): JSX.Element => {
     <Loaders.Default />
   ) : (
     <div className="container is-fluid">
-      <CartShop loading={!isMounted} />
+      <CartShop />
+      {children}
       <Footer />
     </div>
   )
